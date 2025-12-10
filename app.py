@@ -80,10 +80,6 @@ def categories():
     category_list = Category.query.all()
     return render_template('categories.html', category_list=category_list)
 
-@app.route('/team')
-def team():
-    return render_template('team.html')
-
 @app.route('/category/create', methods=["POST"])
 def add_category():
     name = request.form.get("name")
@@ -103,6 +99,10 @@ def delete_category(category_id):
         db.session.commit()
     
     return redirect(url_for("categories"))
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
 
 if __name__ == "__main__":
     with app.app_context():
