@@ -26,7 +26,9 @@
             <span class="input-group-text" for="name">Category Name:</span>
             <input class="form-control" type="text" name="name" required placeholder="e.g., Healthcare">
         </div>
+        <!-- B -->
         <button class="btn btn-primary"type="submit">Add Category</button>
+        <!-- B -->
     </form>
 
   </div>
@@ -34,12 +36,14 @@
   <div class="container mb-3">
     <h2>Existing Categories</h2>
     <ul class="list-group">
+            <!-- B -->
         {% for category in category_list %}
         <li class="list-group-item">
             {{ category.name }}
             <a href="/category/delete/{{ category.id }}" class="d-inline float-end">Delete</a>
         </li>
         {% endfor %}
+            <!-- B -->
     </ul>
   </div>
 
